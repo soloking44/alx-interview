@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Includes a method to compute the minimum number of operations required to produce exactly n H characters in the file.
+This include a method to compute the minimum number of operations
+required to produce exactly n H characters into file.
 """
 
 
