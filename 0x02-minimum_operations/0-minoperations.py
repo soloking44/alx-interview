@@ -13,7 +13,7 @@ def minOperations(n):
     while h < n:
         if n % h == 0:
             h_copy = h
-            ops += 1
+            operations += 1
         h += h_copy
         operations += 1
 
