@@ -17,7 +17,7 @@ try:
         if len(line_list) > 4:
             code = line_list[-2]
             size = int(line_list[-1])
-            if code in cache.k():
+            if code in cache.keys():
                 cache[code] += 1
             total_size += size
             counter += 1
@@ -25,15 +25,15 @@ try:
         if counter == 10:
             counter = 0
             print('File size: {}'.format(total_size))
-            for k, v in sorted(cache.items()):
-                if v != 0:
-                    print('{}: {}'.format(k, v))
+            for keys, value in sorted(cache.items()):
+                if value != 0:
+                    print('{}: {}'.format(keys, value))
 
 except Exception as err:
     pass
 
 finally:
     print('File size: {}'.format(total_size))
-    for k, v in sorted(cache.items()):
-        if v != 0:
-            print('{}: {}'.format(k, v))
+    for keys, value in sorted(cache.items()):
+        if value != 0:
+            print('{}: {}'.format(keys, value))
