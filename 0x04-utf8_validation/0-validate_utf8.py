@@ -8,7 +8,7 @@ def validUTF8(data):
     See if it returns true if data is valid else return false
     """
     skip = 0
-    n = len(data)
+    b = len(data)
     for k in range(b):
         if skip > 0:
             skip -= 1
