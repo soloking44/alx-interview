@@ -9,7 +9,7 @@ def validUTF8(data):
     """
     skip = 0
     n = len(data)
-    for k in range(n):
+    for k in range(b):
         if skip > 0:
             skip -= 1
             continue
@@ -20,7 +20,7 @@ def validUTF8(data):
         elif data[k] & 0b11111000 == 0b11110000:
             # 4-byte utf-8 character encoding
             span = 4
-            if n - k >= span:
+            if b - k >= span:
                 next_body = list(map(
                     lambda x: x & 0b11000000 == 0b10000000,
                     data[k + 1: k + span],
@@ -33,7 +33,7 @@ def validUTF8(data):
         elif data[k] & 0b11110000 == 0b11100000:
             # 3-byte utf-8 character encoding
             span = 3
-            if n - k >= span:
+            if b - k >= span:
                 next_body = list(map(
                     lambda x: x & 0b11000000 == 0b10000000,
                     data[k + 1: k + span],
@@ -46,7 +46,7 @@ def validUTF8(data):
         elif data[k] & 0b11100000 == 0b11000000:
             # 2-byte utf-8 character encoding
             span = 2
-            if n - k >= span:
+            if b - k >= span:
                 next_body = list(map(
                     lambda x: x & 0b11000000 == 0b10000000,
                     data[k + 1: k + span],
