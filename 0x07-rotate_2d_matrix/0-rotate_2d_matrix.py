@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-A process of rotation method.
+Define a function that rotates an nxn 2D matrix 90 degrees clockwise in-place
 """
 
 
 def rotate_2d_matrix(matrix):
     """
-    Rotate the 2d matrix in place
+    Rotate a 2d square matrix 90 degrees clockwise in-place
     Args:
         matrix (list): 2d square matrix
     Return:
@@ -22,5 +22,5 @@ def rotate_2d_matrix(matrix):
     for i in range(n):
         for j in range(int(n / 2)):
             temp = matrix[i][j]
-            matrix[i][j] = matrix[p][n-1-j]
+            matrix[i][j] = matrix[i][n-1-j]
             matrix[i][n-1-j] = temp
