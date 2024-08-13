@@ -17,8 +17,8 @@ def rotate_2d_matrix(matrix):
     if not all(map(lambda x: len(x) == cols, matrix)):
         return
     c, r = 0, rows - 1
-    for p in range(cols * rows):
-        if p % rows == 0:
+    for i in range(cols * rows):
+        if i % rows == 0:
             matrix.append([])
         if r == -1:
             r = rows - 1
